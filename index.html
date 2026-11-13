@@ -1,0 +1,909 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Baptiste Gautreau — Portfolio &amp; carnet de compétences</title>
+  <meta name="description" content="Portfolio de Baptiste Gautreau, étudiant ingénieur en informatique et réseaux à l'ESAIP (Angers) : expériences, compétences et projet professionnel en cybersécurité.">
+  <meta name="theme-color" content="#07070c">
+  <meta property="og:title" content="Baptiste Gautreau — Portfolio">
+  <meta property="og:description" content="Étudiant ingénieur en informatique et réseaux, développeur web full-stack, futur ingénieur cybersécurité.">
+  <meta property="og:type" content="website">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0' stop-color='%23ff9d5c'/%3E%3Cstop offset='.5' stop-color='%23ff5d8f'/%3E%3Cstop offset='1' stop-color='%23b49bff'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='64' height='64' rx='16' fill='%2307070c'/%3E%3Ctext x='32' y='43' font-family='Arial,sans-serif' font-weight='800' font-size='28' text-anchor='middle' fill='url(%23g)'%3EBG%3C/text%3E%3C/svg%3E">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,300..800&family=Hanken+Grotesk:wght@300..700&family=Instrument+Serif:ital@0;1&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <script>document.documentElement.classList.add('js');</script>
+</head>
+<body>
+
+  <!-- Écran d'ouverture -->
+  <div class="loader" aria-hidden="true">
+    <div class="loader__inner">
+      <span class="loader__name">Baptiste Gautreau</span>
+      <span class="loader__num">000</span>
+    </div>
+    <div class="loader__bar"><i></i></div>
+  </div>
+
+  <div class="cursor" aria-hidden="true"><span class="cursor__label"></span></div>
+  <div class="cursor-dot" aria-hidden="true"></div>
+  <div class="grain" aria-hidden="true"></div>
+  <div class="progress" aria-hidden="true"><i></i></div>
+
+  <a class="skip" href="#profil">Aller au contenu</a>
+
+  <!-- Navigation -->
+  <header class="nav">
+    <a class="nav__logo magnetic" href="#top" aria-label="Retour en haut de page">
+      <span>B</span><span>G</span>
+    </a>
+    <nav class="nav__links" aria-label="Navigation principale">
+      <a href="#profil" data-nav><i>01</i>Profil</a>
+      <a href="#experiences" data-nav><i>02</i>Expériences</a>
+      <a href="#competences" data-nav><i>03</i>Compétences</a>
+      <a href="#metier" data-nav><i>04</i>Métier visé</a>
+      <a href="#engagement" data-nav><i>05</i>Engagement</a>
+      <a href="#parcours" data-nav><i>06</i>Parcours</a>
+    </nav>
+    <a class="nav__cv magnetic" href="cv.html">
+      <span>Mon CV</span>
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 17 7M9 7h8v8"/></svg>
+    </a>
+    <button class="nav__burger" type="button" aria-label="Ouvrir le menu" aria-expanded="false" aria-controls="menu">
+      <i></i><i></i>
+    </button>
+  </header>
+
+  <!-- Menu mobile -->
+  <div class="menu" id="menu" aria-hidden="true">
+    <nav aria-label="Menu">
+      <a href="#profil"><i>01</i>Profil</a>
+      <a href="#experiences"><i>02</i>Expériences</a>
+      <a href="#competences"><i>03</i>Compétences</a>
+      <a href="#metier"><i>04</i>Métier visé</a>
+      <a href="#engagement"><i>05</i>Engagement</a>
+      <a href="#parcours"><i>06</i>Parcours</a>
+      <a href="cv.html"><i>07</i>Mon CV</a>
+    </nav>
+    <p class="menu__foot">Angers, France · À l'écoute de nouvelles opportunités</p>
+  </div>
+
+  <main id="top">
+
+    <!-- ============ HERO ============ -->
+    <section class="hero" aria-label="Présentation">
+      <canvas class="hero__canvas" aria-hidden="true"></canvas>
+      <div class="hero__fallback" aria-hidden="true"></div>
+      <div class="hero__veil" aria-hidden="true"></div>
+
+      <div class="hero__top container">
+        <p class="hero__eyebrow"><span data-scramble>Carnet de compétences</span><b>·</b><span>ESAIP ING4</span><b>·</b><span>2026 – 2027</span></p>
+        <p class="hero__status"><i class="pulse"></i>À l'écoute de nouvelles opportunités</p>
+      </div>
+
+      <h1 class="hero__title container" aria-label="Baptiste Gautreau">
+        <span class="hero__line hero__line--1" aria-hidden="true" data-chars>Baptiste</span>
+        <span class="hero__line hero__line--2" aria-hidden="true"><span class="hero__word">Gautreau</span></span>
+      </h1>
+
+      <div class="hero__bottom container">
+        <p class="hero__lead">
+          Étudiant ingénieur en <strong>informatique &amp; réseaux</strong> à l'ESAIP.
+          Je conçois des boutiques en ligne de A à Z pour des artisans —
+          et je me destine à la <em>cybersécurité</em>.
+        </p>
+
+        <div class="hero__role" aria-hidden="true">
+          <span class="hero__role-label">Aujourd'hui</span>
+          <span class="rotator">
+            <span class="is-on">Développeur web full-stack</span>
+            <span>Étudiant ingénieur · ESAIP</span>
+            <span>Bénévole à l'Innov'LAB</span>
+            <span>Futur ingénieur cybersécurité</span>
+          </span>
+        </div>
+
+        <a class="badge magnetic" href="#profil" aria-label="Découvrir mon profil">
+          <svg class="badge__ring" viewBox="0 0 200 200" aria-hidden="true">
+            <defs><path id="circle" d="M100,100 m-78,0 a78,78 0 1,1 156,0 a78,78 0 1,1 -156,0"/></defs>
+            <text><textPath href="#circle" textLength="486">DÉCOUVRIR MON PARCOURS · FAIRE DÉFILER · </textPath></text>
+          </svg>
+          <svg class="badge__arrow" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v16M5 13l7 7 7-7"/></svg>
+        </a>
+      </div>
+    </section>
+
+    <!-- Bandeau défilant -->
+    <div class="marquee" aria-hidden="true">
+      <div class="marquee__row" data-speed="1">
+        <div class="marquee__track">
+          <span>JavaScript</span><i>✦</i><span class="alt">Node.js</span><i>✦</i><span>MySQL</span><i>✦</i><span class="alt">API REST</span><i>✦</i><span>Linux</span><i>✦</i><span class="alt">Stripe</span><i>✦</i><span>HTML &amp; CSS</span><i>✦</i><span class="alt">JWT</span><i>✦</i>
+        </div>
+      </div>
+      <div class="marquee__row" data-speed="-1">
+        <div class="marquee__track">
+          <span class="alt">Sécurité web</span><i>✦</i><span>RGPD</span><i>✦</i><span class="alt">HTTPS</span><i>✦</i><span>Mondial Relay</span><i>✦</i><span class="alt">SEO</span><i>✦</i><span>E-commerce</span><i>✦</i><span class="alt">Click &amp; Collect</span><i>✦</i><span>Cybersécurité</span><i>✦</i>
+        </div>
+      </div>
+    </div>
+
+    <!-- ============ 01 · QUI JE SUIS ============ -->
+    <section class="section about" id="profil">
+      <div class="container">
+        <header class="shead">
+          <p class="shead__num"><span data-scramble>01 — Profil</span></p>
+          <h2 class="shead__title" data-words>Qui je <em>suis&nbsp;?</em></h2>
+        </header>
+
+        <p class="statement" data-statement>
+          Je m'appelle Baptiste. Étudiant en cycle ingénieur à l'ESAIP, à Angers,
+          j'apprends en construisant&nbsp;: deux boutiques en ligne livrées à des artisans,
+          un semestre Erasmus à Varsovie, et un cap — la cybersécurité.
+        </p>
+
+        <div class="about__grid">
+          <div class="portrait tilt" data-reveal>
+            <div class="portrait__inner">
+              <div class="portrait__mono" aria-hidden="true">BG</div>
+              <img src="assets/photo.jpg" alt="Portrait de Baptiste Gautreau" onerror="this.remove()">
+              <div class="portrait__glare" aria-hidden="true"></div>
+              <div class="portrait__tag">
+                <b>Baptiste Gautreau</b>
+                <span>Angers, Pays de la Loire</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="about__text">
+            <p data-reveal>
+              Actuellement en quatrième année à l'<strong>ESAIP</strong> (ING4), en filière
+              <strong>Ingénierie informatique &amp; réseaux</strong>, je souhaite me spécialiser en
+              <strong>cybersécurité</strong>. Je suis passionné par les nouvelles technologies,
+              les langages numériques, le sport, les sciences et l'informatique.
+            </p>
+            <p data-reveal data-delay="1">
+              Ce qui me caractérise&nbsp;: j'aime partir d'un besoin réel, puis construire la solution
+              complète — de la base de données jusqu'à la mise en ligne. C'est ce que j'ai fait, seul,
+              pour deux entreprises artisanales.
+            </p>
+
+            <ul class="traits" data-reveal data-delay="2">
+              <li>Curieux</li>
+              <li>Responsable</li>
+              <li>Motivé</li>
+            </ul>
+
+            <dl class="facts">
+              <div data-reveal>
+                <dt>Formation</dt>
+                <dd>ESAIP — diplôme d'ingénieur, Ingénierie informatique &amp; réseaux <span>2023 – 2028</span></dd>
+              </div>
+              <div data-reveal data-delay="1">
+                <dt>International</dt>
+                <dd>Erasmus à Varsovie, Vizja University — cours en anglais <span>févr. – juin 2026</span></dd>
+              </div>
+              <div data-reveal data-delay="2">
+                <dt>Objectif</dt>
+                <dd>Me spécialiser en cybersécurité <span>Ingénieur cybersécurité</span></dd>
+              </div>
+              <div data-reveal data-delay="3">
+                <dt>Mobilité</dt>
+                <dd>Europe — sur site ou hybride <span>Basé à Angers</span></dd>
+              </div>
+            </dl>
+          </div>
+        </div>
+
+        <ul class="stats">
+          <li data-reveal>
+            <b><span data-count="2">2</span></b>
+            <span>boutiques en ligne conçues et mises en production</span>
+          </li>
+          <li data-reveal data-delay="1">
+            <b><span data-count="14">14</span><small>mois</small></b>
+            <span>de CDD en développement web full-stack</span>
+          </li>
+          <li data-reveal data-delay="2">
+            <b><span data-count="5">5</span><small>mois</small></b>
+            <span>d'études en anglais à Varsovie (Erasmus)</span>
+          </li>
+          <li data-reveal data-delay="3">
+            <b><span data-count="2">2</span></b>
+            <span>bornes d'arcade construites à l'Innov'LAB</span>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- ============ 02 · EXPÉRIENCES ============ -->
+    <section class="section cases" id="experiences">
+      <div class="container">
+        <header class="shead">
+          <p class="shead__num"><span data-scramble>02 — Expériences</span></p>
+          <h2 class="shead__title" data-words>Deux projets, <em>analysés.</em></h2>
+          <p class="shead__lead" data-reveal>
+            Pour chaque expérience&nbsp;: le contexte, ce que j'ai réalisé, les compétences
+            techniques et transversales que j'y ai développées, et ce que j'en retiens.
+          </p>
+        </header>
+
+        <!-- ---- Expérience 1 ---- -->
+        <article class="case" data-case style="--accent: var(--c-apricot)">
+          <div class="case__visual">
+            <div class="case__sticky">
+              <span class="case__index" aria-hidden="true">01</span>
+              <figure class="browser tilt" data-cursor="Défile">
+                <div class="browser__bar" aria-hidden="true">
+                  <i></i><i></i><i></i>
+                  <span class="browser__url">lesmacaronshottekiet.fr</span>
+                </div>
+                <div class="browser__view">
+                  <img src="assets/hottekiet-full.webp" width="1440" height="5200" alt="Capture d'écran du site Les Macarons Hottekiet : page d'accueil, gamme et commande en ligne">
+                </div>
+                <div class="browser__glare" aria-hidden="true"></div>
+              </figure>
+              <a class="link-ext" href="https://lesmacaronshottekiet.fr" target="_blank" rel="noopener">
+                Visiter lesmacaronshottekiet.fr
+                <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 17 7M9 7h8v8"/></svg>
+              </a>
+            </div>
+          </div>
+
+          <div class="case__body">
+            <header class="case__head">
+              <p class="case__meta" data-reveal><span>Stage puis CDD</span><span>janv. – oct. 2024</span><span>Angers</span></p>
+              <h3 class="case__title" data-words>Les Macarons Hottekiet</h3>
+              <p class="case__role" data-reveal>Stagiaire, puis développeur web full-stack</p>
+            </header>
+
+            <div class="block" data-reveal>
+              <h4>Contexte</h4>
+              <p>
+                Les Macarons Hottekiet est un créateur de macarons installé à Angers, avec plus de
+                cinquante parfums. L'entreprise avait besoin d'un site pour présenter sa gamme et
+                permettre de commander en ligne, avec retrait en boutique.
+              </p>
+            </div>
+
+            <div class="block">
+              <h4 data-reveal>Ma démarche</h4>
+              <ol class="steps">
+                <li data-reveal>
+                  <span class="steps__n">1</span>
+                  <div>
+                    <h5>Observer <small>Stage sur site · janv. – févr. 2024</small></h5>
+                    <p>
+                      Avant d'écrire une ligne de code, j'ai passé deux mois dans l'entreprise&nbsp;:
+                      étude des processus de vente et de confection des macarons, participation à la
+                      gestion des stocks et aux tâches administratives, présence au salon gastronomique
+                      de Biarritz. L'objectif&nbsp;: analyser les besoins réels pour le futur site.
+                    </p>
+                  </div>
+                </li>
+                <li data-reveal>
+                  <span class="steps__n">2</span>
+                  <div>
+                    <h5>Concevoir et développer <small>CDD à distance · févr. – oct. 2024</small></h5>
+                    <ul class="ticks">
+                      <li>Tunnel de commande Click &amp; Collect sur mesure, avec calendrier interactif</li>
+                      <li>Back-office&nbsp;: statistiques de ventes, produits et stocks, horaires et créneaux, codes promotionnels, événements</li>
+                      <li>Espace client sécurisé et espace administrateur</li>
+                      <li>Factures, tickets de paiement Stripe et e-mails de confirmation générés automatiquement</li>
+                      <li>Chatbot d'assistance, site multilingue, newsletter et optimisation SEO</li>
+                    </ul>
+                  </div>
+                </li>
+                <li data-reveal>
+                  <span class="steps__n">3</span>
+                  <div>
+                    <h5>Déployer et sécuriser</h5>
+                    <ul class="ticks">
+                      <li>Déploiement et administration du serveur sous Linux</li>
+                      <li>API REST entre le front-end et le back-end (Node.js, MySQL)</li>
+                      <li>Authentification par JWT avec cookies HttpOnly / Secure, HTTPS</li>
+                      <li>Conformité RGPD et gestion du consentement aux cookies</li>
+                    </ul>
+                  </div>
+                </li>
+              </ol>
+            </div>
+
+            <div class="block" data-reveal>
+              <h4>Résultat</h4>
+              <p>Le site est toujours en production et continue d'évoluer. Mesures PageSpeed Insights sur mobile (novembre 2026)&nbsp;:</p>
+              <ul class="gauges">
+                <li class="gauge" style="--v: 93">
+                  <svg viewBox="0 0 120 120" aria-hidden="true"><circle class="gauge__bg" cx="60" cy="60" r="52"/><circle class="gauge__fg" cx="60" cy="60" r="52" pathLength="100"/></svg>
+                  <b><span data-count="93">93</span></b>
+                  <span>Performance <small>page d'accueil</small></span>
+                </li>
+                <li class="gauge" style="--v: 97">
+                  <svg viewBox="0 0 120 120" aria-hidden="true"><circle class="gauge__bg" cx="60" cy="60" r="52"/><circle class="gauge__fg" cx="60" cy="60" r="52" pathLength="100"/></svg>
+                  <b><span data-count="97">97</span></b>
+                  <span>Accessibilité</span>
+                </li>
+                <li class="gauge" style="--v: 100">
+                  <svg viewBox="0 0 120 120" aria-hidden="true"><circle class="gauge__bg" cx="60" cy="60" r="52"/><circle class="gauge__fg" cx="60" cy="60" r="52" pathLength="100"/></svg>
+                  <b><span data-count="100">100</span></b>
+                  <span>Référencement <small>SEO</small></span>
+                </li>
+              </ul>
+            </div>
+
+            <div class="block" data-reveal>
+              <h4>Compétences développées</h4>
+              <div class="skillcols">
+                <div>
+                  <h5>Techniques · métier</h5>
+                  <ul class="chips">
+                    <li>Développement full-stack</li>
+                    <li>HTML · CSS · JavaScript</li>
+                    <li>Node.js</li>
+                    <li>Conception de base MySQL</li>
+                    <li>Paiement Stripe</li>
+                    <li>Administration Linux</li>
+                    <li>Sécurité web (JWT, HTTPS)</li>
+                    <li>SEO</li>
+                  </ul>
+                </div>
+                <div>
+                  <h5>Transversales</h5>
+                  <ul class="chips chips--soft">
+                    <li>Analyse du besoin sur le terrain</li>
+                    <li>Gestion de projet de bout en bout</li>
+                    <li>Autonomie à distance</li>
+                    <li>Dialogue avec un client non technicien</li>
+                    <li>Conformité RGPD</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+
+            <div class="block analysis" data-reveal>
+              <h4>Mon analyse</h4>
+              <p>
+                Le stage d'observation a été décisif&nbsp;: avoir vu de près la confection, la vente et
+                la gestion des stocks m'a permis de concevoir un outil qui épouse le métier — créneaux
+                de retrait, stock par parfum — plutôt qu'un site générique.
+              </p>
+              <p>
+                C'est aussi mon premier projet mené seul de bout en bout. J'y ai appris à découper un
+                besoin, à faire des choix techniques et à les assumer en production. Manipuler des
+                paiements et des données clients m'a confronté concrètement aux enjeux de sécurité et
+                de protection des données&nbsp;: c'est ce qui nourrit aujourd'hui mon projet de
+                spécialisation en cybersécurité.
+              </p>
+            </div>
+          </div>
+        </article>
+
+        <!-- ---- Expérience 2 ---- -->
+        <article class="case case--flip" data-case style="--accent: var(--c-sky)">
+          <div class="case__visual">
+            <div class="case__sticky">
+              <span class="case__index" aria-hidden="true">02</span>
+              <figure class="browser tilt" data-cursor="Défile">
+                <div class="browser__bar" aria-hidden="true">
+                  <i></i><i></i><i></i>
+                  <span class="browser__url">les-douceurs-du-monde.fr</span>
+                </div>
+                <div class="browser__view">
+                  <img src="assets/douceurs-full.webp" width="1440" height="4300" alt="Capture d'écran du site Les Douceurs du Monde : accueil, livraison et catalogue" loading="lazy">
+                </div>
+                <div class="browser__glare" aria-hidden="true"></div>
+              </figure>
+              <a class="link-ext" href="https://les-douceurs-du-monde.fr" target="_blank" rel="noopener">
+                Visiter les-douceurs-du-monde.fr
+                <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 17 7M9 7h8v8"/></svg>
+              </a>
+            </div>
+          </div>
+
+          <div class="case__body">
+            <header class="case__head">
+              <p class="case__meta" data-reveal><span>CDD · 5 mois</span><span>juil. – nov. 2025</span><span>À distance</span></p>
+              <h3 class="case__title" data-words>Les Douceurs du Monde</h3>
+              <p class="case__role" data-reveal>Développeur web full-stack</p>
+            </header>
+
+            <div class="block" data-reveal>
+              <h4>Contexte</h4>
+              <p>
+                Les Douceurs du Monde vend des gourmandises — fruits secs, nougats, loukoums, fudges.
+                Le besoin&nbsp;: une boutique en ligne complète, avec paiement, livraison et un espace
+                d'administration pour piloter l'activité.
+              </p>
+            </div>
+
+            <div class="block">
+              <h4 data-reveal>Ce que j'ai réalisé</h4>
+              <ul class="ticks ticks--lg">
+                <li data-reveal>Conception et développement complet du site&nbsp;: HTML, CSS, JavaScript, Node.js et MySQL, sous Linux</li>
+                <li data-reveal>Intégration de deux API tierces&nbsp;: <strong>Mondial Relay</strong> pour les livraisons, <strong>Stripe</strong> pour le paiement sécurisé</li>
+                <li data-reveal>Espace client et espace administrateur&nbsp;: commandes, paiements, factures et reçus, stocks, événements, statistiques de vente</li>
+                <li data-reveal>Automatisation&nbsp;: paiement en ligne, e-mails de confirmation, factures et reçus envoyés aux clients et aux vendeurs</li>
+                <li data-reveal>Sécurité&nbsp;: API REST, authentification JWT avec cookies HttpOnly / Secure, HTTPS, protection des données sensibles</li>
+                <li data-reveal>Cadre légal&nbsp;: mentions légales, CGV, conformité RGPD, gestion des cookies — et optimisation du référencement</li>
+              </ul>
+            </div>
+
+            <div class="block" data-reveal>
+              <h4>En chiffres</h4>
+              <ul class="figures">
+                <li><b><span data-count="5">5</span></b><span>mois, de la conception à la mise en ligne</span></li>
+                <li><b><span data-count="2">2</span></b><span>API tierces intégrées (livraison et paiement)</span></li>
+                <li><b><span data-count="10">10</span><small>+</small></b><span>pays européens livrés via Mondial Relay</span></li>
+              </ul>
+            </div>
+
+            <div class="block" data-reveal>
+              <h4>Compétences développées</h4>
+              <div class="skillcols">
+                <div>
+                  <h5>Techniques · métier</h5>
+                  <ul class="chips">
+                    <li>Intégration d'API tierces</li>
+                    <li>Architecture e-commerce</li>
+                    <li>Authentification sécurisée</li>
+                    <li>Modélisation de données</li>
+                    <li>E-mails transactionnels</li>
+                    <li>Logistique Mondial Relay</li>
+                  </ul>
+                </div>
+                <div>
+                  <h5>Transversales</h5>
+                  <ul class="chips chips--soft">
+                    <li>Capitaliser sur une première expérience</li>
+                    <li>Rédaction de documents légaux</li>
+                    <li>Organisation en autonomie</li>
+                    <li>Relation client à distance</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+
+            <div class="block analysis" data-reveal>
+              <h4>Mon analyse</h4>
+              <p>
+                Deuxième boutique, nouveau défi&nbsp;: passer du retrait en boutique à l'expédition.
+                J'ai dû comprendre et intégrer une API logistique, gérer des cas que je n'avais jamais
+                rencontrés — frais de port, points relais — et fiabiliser toute la chaîne&nbsp;:
+                commande, paiement, facture, e-mail.
+              </p>
+              <p>
+                Ce projet m'a montré que je progressais&nbsp;: là où le premier site m'avait demandé
+                neuf mois, j'ai livré celui-ci en cinq, en m'appuyant sur les bases posées la première
+                fois. J'en retiens l'importance de capitaliser&nbsp;: réutiliser ce qui a fait ses
+                preuves, pour consacrer le temps gagné à la sécurité et à la conformité.
+              </p>
+            </div>
+          </div>
+        </article>
+
+        <!-- ---- Première découverte ---- -->
+        <aside class="first" data-reveal>
+          <div class="first__year" aria-hidden="true">2019</div>
+          <div class="first__text">
+            <p class="first__label">Premier contact avec l'entreprise</p>
+            <h3>Vélo Horizon Angers <small>Stage · novembre 2019</small></h3>
+            <p>
+              Mon tout premier stage&nbsp;: gestion du site web, réparation et vente d'équipements de
+              vélos électriques. Une première découverte du monde professionnel — et déjà, un site web
+              au service d'un commerce local.
+            </p>
+          </div>
+        </aside>
+      </div>
+    </section>
+
+    <!-- ============ 03 · SYNTHÈSE DES COMPÉTENCES ============ -->
+    <section class="section skills" id="competences">
+      <div class="container">
+        <header class="shead">
+          <p class="shead__num"><span data-scramble>03 — Compétences</span></p>
+          <h2 class="shead__title" data-words>La synthèse, <em>preuves à l'appui.</em></h2>
+          <p class="shead__lead" data-reveal>
+            Chaque compétence est reliée à l'expérience où je l'ai réellement mise en œuvre.
+            Choisissez une expérience pour voir ce qu'elle m'a apporté.
+          </p>
+        </header>
+
+        <div class="filter" role="group" aria-label="Filtrer les compétences par expérience" data-reveal>
+          <button type="button" class="is-on" data-filter="all" aria-pressed="true">Tout</button>
+          <button type="button" data-filter="h" aria-pressed="false"><i style="--c: var(--c-apricot)"></i>Macarons Hottekiet</button>
+          <button type="button" data-filter="d" aria-pressed="false"><i style="--c: var(--c-sky)"></i>Douceurs du Monde</button>
+          <button type="button" data-filter="e" aria-pressed="false"><i style="--c: var(--c-lav)"></i>ESAIP &amp; Erasmus</button>
+          <button type="button" data-filter="i" aria-pressed="false"><i style="--c: var(--c-mint)"></i>Innov'LAB</button>
+          <span class="filter__count" aria-live="polite"><b>0</b> compétences</span>
+        </div>
+
+        <div class="bento">
+          <article class="bcard bcard--wide tilt" data-reveal>
+            <div class="bcard__glare" aria-hidden="true"></div>
+            <p class="bcard__k">01</p>
+            <h3>Développement web</h3>
+            <p class="bcard__d">Du premier écran à l'API&nbsp;: je développe l'ensemble d'une application.</p>
+            <ul class="sk">
+              <li data-src="h d">HTML · CSS</li>
+              <li data-src="h d">JavaScript</li>
+              <li data-src="h d">Node.js</li>
+              <li data-src="h d">API REST</li>
+              <li data-src="h">Site multilingue</li>
+              <li data-src="h">Tunnel de commande sur mesure</li>
+              <li data-src="h d">Optimisation SEO</li>
+              <li data-src="e">Programmation (cursus ingénieur)</li>
+            </ul>
+          </article>
+
+          <article class="bcard tilt" data-reveal data-delay="1">
+            <div class="bcard__glare" aria-hidden="true"></div>
+            <p class="bcard__k">02</p>
+            <h3>Données</h3>
+            <p class="bcard__d">Modéliser et faire vivre une base en production.</p>
+            <ul class="sk">
+              <li data-src="h d">MySQL</li>
+              <li data-src="h d">Modélisation (clients, produits, commandes)</li>
+              <li data-src="h d">Gestion des stocks et des créneaux</li>
+              <li data-src="h d">Statistiques de vente</li>
+            </ul>
+          </article>
+
+          <article class="bcard bcard--accent tilt" data-reveal>
+            <div class="bcard__glare" aria-hidden="true"></div>
+            <p class="bcard__k">03</p>
+            <h3>Sécurité &amp; conformité</h3>
+            <p class="bcard__d">Le socle de mon projet professionnel.</p>
+            <ul class="sk">
+              <li data-src="h d">Authentification JWT</li>
+              <li data-src="h d">Cookies HttpOnly / Secure</li>
+              <li data-src="h d">HTTPS · certificats SSL</li>
+              <li data-src="h d">Protection des données sensibles</li>
+              <li data-src="h d">RGPD · mentions légales · CGV</li>
+              <li data-src="h d">Gestion du consentement</li>
+            </ul>
+          </article>
+
+          <article class="bcard tilt" data-reveal data-delay="1">
+            <div class="bcard__glare" aria-hidden="true"></div>
+            <p class="bcard__k">04</p>
+            <h3>Systèmes &amp; déploiement</h3>
+            <p class="bcard__d">Mettre en ligne, et garder en ligne.</p>
+            <ul class="sk">
+              <li data-src="h d">Linux</li>
+              <li data-src="h">Administration de serveur</li>
+              <li data-src="h d">Architecture serveur sécurisée</li>
+              <li data-src="e">Réseaux (filière informatique &amp; réseaux)</li>
+            </ul>
+          </article>
+
+          <article class="bcard tilt" data-reveal data-delay="2">
+            <div class="bcard__glare" aria-hidden="true"></div>
+            <p class="bcard__k">05</p>
+            <h3>Intégrations &amp; automatisation</h3>
+            <p class="bcard__d">Connecter les services, supprimer les tâches répétitives.</p>
+            <ul class="sk">
+              <li data-src="h d">Stripe (paiement)</li>
+              <li data-src="d">Mondial Relay (livraison)</li>
+              <li data-src="h d">Factures et e-mails automatiques</li>
+              <li data-src="h">Chatbot d'assistance</li>
+              <li data-src="h">Newsletter</li>
+              <li data-src="h d">Mesure d'audience</li>
+            </ul>
+          </article>
+
+          <article class="bcard tilt" data-reveal>
+            <div class="bcard__glare" aria-hidden="true"></div>
+            <p class="bcard__k">06</p>
+            <h3>Matériel</h3>
+            <p class="bcard__d">L'informatique, c'est aussi ce qui se touche.</p>
+            <ul class="sk">
+              <li data-src="i">Diagnostic et réparation de matériel informatique</li>
+              <li data-src="i">Conception de bornes d'arcade</li>
+            </ul>
+          </article>
+
+          <article class="bcard bcard--wide tilt" data-reveal data-delay="1">
+            <div class="bcard__glare" aria-hidden="true"></div>
+            <p class="bcard__k">07</p>
+            <h3>Compétences transversales</h3>
+            <p class="bcard__d">Ce qui fait qu'un projet aboutit — au-delà du code.</p>
+            <ul class="sk">
+              <li data-src="h">Analyse du besoin sur le terrain</li>
+              <li data-src="h d">Gestion de projet de bout en bout</li>
+              <li data-src="h d">Autonomie et travail à distance</li>
+              <li data-src="h d">Relation client et vulgarisation</li>
+              <li data-src="e">Anglais — études en anglais</li>
+              <li data-src="e">Adaptation à un environnement international</li>
+              <li data-src="i">Travail en équipe associative</li>
+              <li data-src="i">Formation et transmission</li>
+            </ul>
+          </article>
+        </div>
+
+        <div class="synth" data-reveal>
+          <p class="synth__label">En synthèse</p>
+          <p class="synth__text">
+            Un profil de <strong>développeur full-stack autonome</strong>, capable de mener un projet web
+            de l'analyse du besoin jusqu'à l'exploitation, avec un <strong>réflexe sécurité et conformité</strong>
+            déjà ancré. Mon axe de progression&nbsp;: passer de «&nbsp;sécuriser mes propres projets&nbsp;» à
+            «&nbsp;sécuriser des systèmes&nbsp;».
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ 04 · MÉTIER VISÉ ============ -->
+    <section class="section job" id="metier">
+      <div class="job__glow" aria-hidden="true"></div>
+      <div class="container">
+        <header class="shead">
+          <p class="shead__num"><span data-scramble>04 — Métier visé</span></p>
+          <h2 class="shead__title" data-words>Ingénieur <em>cybersécurité.</em></h2>
+          <p class="shead__lead" data-reveal>
+            Protéger les systèmes d'information&nbsp;: prévenir les attaques, les détecter, y répondre.
+            Voici où j'en suis par rapport à ce que le métier demande — sans tricher sur ce qu'il me
+            reste à apprendre.
+          </p>
+        </header>
+
+        <div class="job__grid">
+          <div class="radar" data-reveal>
+            <svg class="radar__svg" viewBox="-170 -170 340 340" role="img" aria-label="Graphique radar de mes compétences face au métier d'ingénieur cybersécurité"></svg>
+            <ul class="radar__legend" aria-hidden="true">
+              <li><i class="l3"></i>Mis en pratique en production</li>
+              <li><i class="l2"></i>En cours d'acquisition</li>
+              <li><i class="l1"></i>À développer</li>
+            </ul>
+          </div>
+
+          <ol class="axes">
+            <li data-v="3" data-short="Dév. sécurisé" data-reveal>
+              <div class="axes__top"><h3>Développement sécurisé</h3><span class="lvl" aria-label="Niveau 3 sur 3"><i></i><i></i><i></i></span></div>
+              <p>API REST, authentification JWT, cookies HttpOnly / Secure et HTTPS&nbsp;: mis en œuvre sur deux sites en production.</p>
+            </li>
+            <li data-v="3" data-short="Données &amp; RGPD" data-reveal>
+              <div class="axes__top"><h3>Protection des données &amp; RGPD</h3><span class="lvl" aria-label="Niveau 3 sur 3"><i></i><i></i><i></i></span></div>
+              <p>Sécurisation des données clients, mentions légales, CGV, gestion du consentement&nbsp;: la conformité fait partie de mes livrables.</p>
+            </li>
+            <li data-v="2" data-short="Systèmes Linux" data-reveal>
+              <div class="axes__top"><h3>Systèmes &amp; serveurs Linux</h3><span class="lvl" aria-label="Niveau 2 sur 3"><i></i><i></i><i></i></span></div>
+              <p>Déploiement et administration d'un serveur de production. À structurer&nbsp;: durcissement, supervision, bonnes pratiques d'exploitation.</p>
+            </li>
+            <li data-v="2" data-short="Réseaux" data-reveal>
+              <div class="axes__top"><h3>Réseaux &amp; infrastructures</h3><span class="lvl" aria-label="Niveau 2 sur 3"><i></i><i></i><i></i></span></div>
+              <p>Au cœur de ma filière Informatique &amp; Réseaux à l'ESAIP. À mettre en pratique en entreprise, à l'échelle d'un vrai système d'information.</p>
+            </li>
+            <li data-v="1" data-short="Audit &amp; tests" data-reveal>
+              <div class="axes__top"><h3>Audit &amp; tests d'intrusion</h3><span class="lvl" aria-label="Niveau 1 sur 3"><i></i><i></i><i></i></span></div>
+              <p>Encore peu pratiqué de façon encadrée&nbsp;: c'est précisément l'objet de la spécialisation que je vise.</p>
+            </li>
+            <li data-v="1" data-short="Détection" data-reveal>
+              <div class="axes__top"><h3>Détection &amp; réponse à incident</h3><span class="lvl" aria-label="Niveau 1 sur 3"><i></i><i></i><i></i></span></div>
+              <p>À acquérir sur le terrain, au sein d'une équipe sécurité.</p>
+            </li>
+          </ol>
+        </div>
+
+        <div class="bridge">
+          <blockquote class="bridge__quote" data-reveal>
+            <p>
+              On protège mieux ce que l'on sait construire. Avoir conçu, déployé et exploité des
+              applications qui manipulent des paiements et des données personnelles me donne
+              ce point de vue <em>de l'intérieur.</em>
+            </p>
+          </blockquote>
+
+          <div class="plan">
+            <h3 data-reveal>Mes prochaines étapes</h3>
+            <ol>
+              <li data-reveal>
+                <span>01</span>
+                <div><h4>Me spécialiser</h4><p>Orienter la suite de mon cycle ingénieur à l'ESAIP vers la cybersécurité.</p></div>
+              </li>
+              <li data-reveal data-delay="1">
+                <span>02</span>
+                <div><h4>Apprendre sur le terrain</h4><p>Intégrer une équipe en stage&nbsp;: développement, sécurité informatique et protection des données, architecture système ou réseau.</p></div>
+              </li>
+              <li data-reveal data-delay="2">
+                <span>03</span>
+                <div><h4>Continuer à pratiquer</h4><p>Faire de mes projets web un terrain d'application&nbsp;: durcissement, sauvegardes, supervision.</p></div>
+              </li>
+            </ol>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ 05 · ENGAGEMENT ============ -->
+    <section class="section engage" id="engagement">
+      <div class="container">
+        <header class="shead">
+          <p class="shead__num"><span data-scramble>05 — Engagement bénévole</span></p>
+          <h2 class="shead__title" data-words>Innov'LAB, <em>côté atelier.</em></h2>
+        </header>
+
+        <div class="engage__grid">
+          <div class="arcade" data-reveal>
+            <div class="arcade__cab">
+              <div class="arcade__marquee">INNOV'LAB</div>
+              <div class="arcade__screen">
+                <canvas width="128" height="96" aria-label="Animation en pixels : écran d'une borne d'arcade"></canvas>
+              </div>
+              <div class="arcade__panel">
+                <span class="arcade__stick" aria-hidden="true"><i></i></span>
+                <button class="arcade__btn arcade__btn--a" type="button" aria-label="Bouton A de la borne : déclencher une animation"></button>
+                <button class="arcade__btn arcade__btn--b" type="button" aria-label="Bouton B de la borne : changer les couleurs"></button>
+              </div>
+              <div class="arcade__base"><span>INSERT COIN</span></div>
+            </div>
+            <p class="arcade__hint">Appuyez sur les boutons <kbd>A</kbd> <kbd>B</kbd></p>
+          </div>
+
+          <div class="engage__text">
+            <p class="engage__meta" data-reveal>
+              <span>Bénévole</span><span>oct. 2025 – aujourd'hui</span><span>ING3 &amp; S7 ING4</span>
+            </p>
+            <p class="engage__lead" data-reveal>
+              L'Innov'LAB est une association étudiante de l'ESAIP. J'y suis bénévole depuis ma
+              troisième année, et je poursuis cet engagement en ING4.
+            </p>
+
+            <ul class="engage__list">
+              <li data-reveal>
+                <b>Réparer</b>
+                <span>Remise en état d'outils informatiques&nbsp;: diagnostiquer une panne, trouver la cause, redonner du service à un matériel.</span>
+              </li>
+              <li data-reveal data-delay="1">
+                <b>Construire</b>
+                <span>Création de deux bornes d'arcade, du projet à l'objet fini — un travail d'équipe mêlant matériel et logiciel.</span>
+              </li>
+              <li data-reveal data-delay="2">
+                <b>Former</b>
+                <span>Participation aux actions de formation de l'association.</span>
+              </li>
+            </ul>
+
+            <div class="engage__gain" data-reveal>
+              <h3>Ce que cet engagement m'apporte</h3>
+              <p>
+                Dans mes projets web, je travaille seul et à distance. À l'Innov'LAB, c'est l'inverse&nbsp;:
+                un atelier, une équipe, du matériel entre les mains. J'y développe le travail collectif,
+                la transmission, et une culture matérielle qui complète mon profil logiciel — utile
+                pour un futur ingénieur en sécurité, qui doit comprendre un système dans son ensemble.
+              </p>
+            </div>
+
+            <p class="engage__proof" data-reveal>
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 12l2 2 4-4M12 3l7 3v6c0 4.5-3 7.5-7 9-4-1.500-7-4.500-7-9V6l7-3z"/></svg>
+              <span>Attestation de bénévolat jointe au livrable.</span>
+              <a class="link-ext" href="assets/attestation-innovlab.pdf" target="_blank" rel="noopener" data-attestation hidden>
+                Voir l'attestation
+                <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 17 7M9 7h8v8"/></svg>
+              </a>
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ 06 · PARCOURS ============ -->
+    <section class="section path" id="parcours">
+      <div class="container">
+        <header class="shead">
+          <p class="shead__num"><span data-scramble>06 — Parcours</span></p>
+          <h2 class="shead__title" data-words>Le fil, <em>en un coup d'œil.</em></h2>
+        </header>
+
+        <ol class="tl" data-timeline>
+          <li class="tl__line" aria-hidden="true"><i></i></li>
+
+          <li class="tl__item" data-reveal>
+            <span class="tl__dot" style="--c: var(--c-lav)"></span>
+            <p class="tl__date">2023 – 2028</p>
+            <h3>ESAIP, École d'Ingénieurs</h3>
+            <p class="tl__sub">Diplôme d'ingénieur · Ingénierie informatique &amp; réseaux</p>
+            <p>Actuellement en ING4. Objectif&nbsp;: spécialisation en cybersécurité.</p>
+            <span class="tl__tag">Formation</span>
+          </li>
+
+          <li class="tl__item" data-reveal>
+            <span class="tl__dot" style="--c: var(--c-lav)"></span>
+            <p class="tl__date">févr. – juin 2026</p>
+            <h3>Vizja University, Varsovie</h3>
+            <p class="tl__sub">Semestre 6 · Erasmus · Computer Science</p>
+            <p>Un semestre d'études en Pologne, entièrement en anglais.</p>
+            <span class="tl__tag">International</span>
+          </li>
+
+          <li class="tl__item" data-reveal>
+            <span class="tl__dot" style="--c: var(--c-mint)"></span>
+            <p class="tl__date">oct. 2025 – aujourd'hui</p>
+            <h3>Innov'LAB ESAIP</h3>
+            <p class="tl__sub">Bénévole · association étudiante</p>
+            <p>Formation, réparation d'outils informatiques, création de deux bornes d'arcade.</p>
+            <span class="tl__tag">Engagement</span>
+          </li>
+
+          <li class="tl__item" data-reveal>
+            <span class="tl__dot" style="--c: var(--c-sky)"></span>
+            <p class="tl__date">juil. – nov. 2025</p>
+            <h3>Les Douceurs du Monde</h3>
+            <p class="tl__sub">Développeur web · CDD · à distance</p>
+            <p>Boutique en ligne complète&nbsp;: paiement Stripe, livraison Mondial Relay, espaces client et administrateur.</p>
+            <span class="tl__tag">Expérience</span>
+          </li>
+
+          <li class="tl__item" data-reveal>
+            <span class="tl__dot" style="--c: var(--c-apricot)"></span>
+            <p class="tl__date">janv. – oct. 2024</p>
+            <h3>Les Macarons Hottekiet</h3>
+            <p class="tl__sub">Stagiaire, puis développeur web · CDD</p>
+            <p>Analyse des besoins sur site, puis conception du site de commande Click &amp; Collect et de son back-office.</p>
+            <span class="tl__tag">Expérience</span>
+          </li>
+
+          <li class="tl__item" data-reveal>
+            <span class="tl__dot" style="--c: var(--c-lemon)"></span>
+            <p class="tl__date">2020 – 2023</p>
+            <h3>Ensemble scolaire Saint-Benoît, Angers</h3>
+            <p class="tl__sub">Baccalauréat général</p>
+            <p>Spécialités Mathématiques et Physique-Chimie&nbsp;; Numérique et Sciences Informatiques (NSI) en Première.</p>
+            <span class="tl__tag">Formation</span>
+          </li>
+
+          <li class="tl__item" data-reveal>
+            <span class="tl__dot" style="--c: var(--c-rasp)"></span>
+            <p class="tl__date">nov. 2019</p>
+            <h3>Vélo Horizon Angers</h3>
+            <p class="tl__sub">Stage de découverte</p>
+            <p>Gestion du site web, réparation et vente d'équipements de vélos électriques.</p>
+            <span class="tl__tag">Expérience</span>
+          </li>
+        </ol>
+
+        <div class="cvcta" data-reveal>
+          <div>
+            <p class="cvcta__k">Curriculum vitæ</p>
+            <h3>Mon CV à jour, en une page.</h3>
+            <p>À consulter en ligne ou à enregistrer en PDF.</p>
+          </div>
+          <a class="btn magnetic" href="cv.html" data-cursor="Ouvrir">
+            <span>Voir mon CV</span>
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 17 7M9 7h8v8"/></svg>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ CONTACT ============ -->
+    <section class="contact" id="contact">
+      <div class="contact__blobs" aria-hidden="true"><i></i><i></i><i></i></div>
+      <div class="container">
+        <p class="contact__k"><i class="pulse"></i>À l'écoute de nouvelles opportunités · Europe</p>
+        <h2 class="contact__title" data-words>Un stage, un projet, <em>une question&nbsp;?</em></h2>
+        <a class="contact__btn magnetic" href="https://www.linkedin.com/in/bgautreau/" target="_blank" rel="noopener" data-cursor="Écrire">
+          <span>Parlons-en sur LinkedIn</span>
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 17 7M9 7h8v8"/></svg>
+        </a>
+      </div>
+      <div class="contact__big" aria-hidden="true"><span data-drift>Baptiste Gautreau — Baptiste Gautreau — Baptiste Gautreau —&nbsp;</span></div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer__in">
+      <p>© 2026 Baptiste Gautreau</p>
+      <p>Carnet de compétences, étape 1 · ESAIP ING4 · 2026 – 2027</p>
+      <p>
+        <a href="https://www.linkedin.com/in/bgautreau/" target="_blank" rel="noopener">LinkedIn</a>
+        <a href="cv.html">CV</a>
+        <a href="#top">Haut de page ↑</a>
+      </p>
+    </div>
+  </footer>
+
+  <script src="js/main.js" defer></script>
+</body>
+</html>
