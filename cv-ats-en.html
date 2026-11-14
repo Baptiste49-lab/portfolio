@@ -1,0 +1,178 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>ATS CV — Baptiste Gautreau</title>
+  <meta name="description" content="CV of Baptiste Gautreau in a format optimized for applicant tracking systems (ATS).">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='16' fill='%23111'/%3E%3Ctext x='32' y='43' font-family='Arial,sans-serif' font-weight='800' font-size='28' text-anchor='middle' fill='%23fff'%3EBG%3C/text%3E%3C/svg%3E">
+  <style>
+    /* Version pensée pour les logiciels de tri (ATS) : une seule colonne, polices standard,
+       aucun tableau, aucune icône, titres de rubrique classiques, texte sélectionnable. */
+    *, *::before, *::after { box-sizing: border-box; }
+    html { -webkit-text-size-adjust: 100%; }
+    body { margin: 0; background: #e8eaef; color: #111; font-family: Arial, Helvetica, sans-serif; font-size: 13px; line-height: 1.4; font-variant-ligatures: none; }
+    h1, h2, h3, p, ul { margin: 0; padding: 0; }
+    a { color: inherit; }
+
+    .bar { position: sticky; top: 0; z-index: 5; padding: 12px clamp(16px, 4vw, 40px); background: #fff; border-bottom: 1px solid #d9dde5; font-family: Arial, sans-serif; }
+    .bar__row { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 10px; }
+    .bar nav { display: flex; flex-wrap: wrap; gap: 8px; }
+    .bar a { display: inline-block; padding: 9px 16px; border-radius: 8px; font-size: 14px; font-weight: bold; text-decoration: none; color: #111; border: 1px solid #d9dde5; }
+    .bar a:hover { background: #f2f4f7; }
+    .bar a.primary { background: #111; border-color: #111; color: #fff; }
+    .bar p { margin-top: 8px; font-size: 13px; color: #555; max-width: 900px; }
+
+    .wrap { padding: clamp(14px, 4vw, 40px) clamp(8px, 3vw, 40px) 60px; display: grid; justify-items: center; }
+    .page { width: 210mm; max-width: 100%; background: #fff; padding: 13mm 15mm; box-shadow: 0 20px 50px -20px rgba(20, 24, 36, .35); }
+
+    h1 { font-size: 22px; font-weight: bold; }
+    .headline { margin-top: 3px; font-size: 14px; font-weight: bold; }
+    .contact { margin-top: 6px; }
+    h2 { margin-top: 14px; margin-bottom: 6px; padding-bottom: 2px; font-size: 14px; font-weight: bold; border-bottom: 1px solid #111; }
+    h3 { margin-top: 8px; font-size: 13px; font-weight: bold; }
+    .meta { font-style: normal; }
+    ul { margin-top: 2px; padding-left: 18px; }
+    li { margin-top: 1px; }
+    .skills p { margin-top: 2px; }
+
+    .bar .langs { display: inline-flex; gap: 2px; padding: 3px; border: 1px solid #d9dde5; border-radius: 10px; vertical-align: middle; }
+    .bar .langs a { padding: 6px 9px; border: 0; border-radius: 7px; font-size: 13px; }
+    .bar .langs a[aria-current] { background: #111; color: #fff; }
+    @media (max-width: 720px) { .page { padding: 24px 18px; } }
+    @page { size: A4; margin: 12mm 15mm; }
+    @media print {
+      body { background: #fff; }
+      .bar { display: none; }
+      .wrap { padding: 0; display: block; }
+      .page { width: auto; max-width: none; padding: 0; box-shadow: none; }
+      h2, h3 { break-after: avoid; }
+      li { break-inside: avoid; }
+    }
+  </style>
+</head>
+<body>
+  <div class="bar">
+    <div class="bar__row">
+      <nav aria-label="Navigation">
+        <a href="index.html?lang=en">← Portfolio</a>
+        <a href="cv-en.html">Classic CV</a>
+        <span class="langs" aria-label="CV language"><a href="cv-ats.html" lang="fr">FR</a><a href="cv-ats-en.html" lang="en" aria-current="true">EN</a><a href="cv-ats-es.html" lang="es">ES</a></span>
+      </nav>
+      <a class="primary" href="CV-Baptiste-Gautreau-ATS-EN.pdf" download>Download PDF (ATS)</a>
+    </div>
+    <p>Version optimized for applicant tracking systems: a single column, no graphics, with the keywords of the job. This is the one to upload on recruitment websites.</p>
+  </div>
+
+  <div class="wrap">
+    <main class="page">
+      <h1>BAPTISTE GAUTREAU</h1>
+      <p class="headline">Engineering student in computer science and networks – Full-stack web developer – Cybersecurity</p>
+      <p class="contact">
+        Angers, France<br>
+        Email: bgautreau.ing2028@esaip.org<br>
+        LinkedIn: linkedin.com/in/bgautreau<br>
+        Portfolio: baptiste49-lab.github.io/portfolio/?lang=en
+      </p>
+
+      <h2>PROFILE</h2>
+      <p>
+        4th-year engineering student at ESAIP (computer science and networks) and full-stack web developer.
+        I designed, developed, secured and deployed two production e-commerce websites on my own (JavaScript, Node.js,
+        MySQL, Linux, Stripe), then hardened the server of one of them during a security internship (firewall, 2FA,
+        backups, monitoring). Goal: specialize in cybersecurity (web application security, data protection, systems
+        and network security).
+      </p>
+
+      <h2>SKILLS</h2>
+      <div class="skills">
+        <p><strong>Development:</strong> JavaScript, HTML5, CSS3, Node.js, SQL, MySQL, REST API, full-stack web development</p>
+        <p><strong>Cybersecurity:</strong> server hardening, firewall, CrowdSec, key-based SSH, least privilege, two-factor authentication (2FA / MFA), logging, monitoring and alerting, backup and restore, web application security, JWT authentication, HttpOnly / Secure cookies, HTTPS, SSL/TLS certificates, personal data protection, GDPR</p>
+        <p><strong>Systems and networks:</strong> Linux, server administration, production deployment, secure server architecture, computer networks</p>
+        <p><strong>E-commerce and integrations:</strong> Stripe (online payments), Mondial Relay API (shipping), transactional emails, automated invoicing, SEO, Google Analytics</p>
+        <p><strong>Project management:</strong> requirements analysis, end-to-end project management, autonomy, client relations, remote work, event organization</p>
+      </div>
+
+      <h2>PROFESSIONAL EXPERIENCE</h2>
+
+      <h3>Website Security and Redesign Intern – Les Macarons Hottekiet – Angers, France</h3>
+      <p class="meta">07/2026 – 08/2026</p>
+      <ul>
+        <li>Hardened a production Linux server: firewall with only the required ports open, key-only SSH authentication, automatic blocking of malicious IP addresses with CrowdSec</li>
+        <li>Applied the principle of least privilege: services isolated under an account without administrator rights</li>
+        <li>Enforced two-factor authentication (2FA / MFA) on the admin area, with revocable sessions and login logging</li>
+        <li>Set up automated database backups with weekly restore tests</li>
+        <li>Implemented site monitoring and incident alerts, with no personal data in notifications (GDPR)</li>
+        <li>Redesigned the user interface (UI) of all public pages of the e-commerce website</li>
+      </ul>
+
+      <h3>Full-Stack Web Developer (fixed-term contract) – Les Douceurs du Monde – Remote</h3>
+      <p class="meta">07/2025 – 11/2025</p>
+      <ul>
+        <li>Designed and developed a complete e-commerce website (les-douceurs-du-monde.fr) in HTML, CSS, JavaScript, Node.js and MySQL on Linux</li>
+        <li>Integrated third-party APIs: Mondial Relay (shipping management) and Stripe (secure online payments)</li>
+        <li>Built a customer area and an admin area: orders, payments, invoices, stock, events and sales statistics</li>
+        <li>Secured the application: REST API, JWT authentication, HttpOnly / Secure cookies, HTTPS, protection of sensitive data</li>
+        <li>Automated confirmation emails, invoices and receipts; GDPR compliance, legal notice and terms of sale; SEO optimization</li>
+      </ul>
+
+      <h3>Full-Stack Web Developer (fixed-term contract) – Les Macarons Hottekiet – Remote</h3>
+      <p class="meta">02/2024 – 10/2024</p>
+      <ul>
+        <li>Designed, developed and deployed the e-commerce website lesmacaronshottekiet.fr (HTML, CSS, JavaScript, Node.js, MySQL)</li>
+        <li>Deployed and administered the Linux server with a secure architecture</li>
+        <li>Developed a Click &amp; Collect ordering flow with an interactive calendar and Stripe payments</li>
+        <li>Built a back office: sales statistics, product and stock management, time slots, promo codes, events</li>
+        <li>Automated invoices, payment receipts and emails; customer support chatbot; multilingual website; newsletter; SEO</li>
+        <li>Security: REST API, JWT authentication, HttpOnly / Secure cookies, HTTPS, GDPR compliance</li>
+      </ul>
+
+      <h3>Intern – Les Macarons Hottekiet – Angers, France</h3>
+      <p class="meta">01/2024 – 02/2024</p>
+      <ul>
+        <li>Analyzed the company's needs for the development of its website</li>
+        <li>Studied sales and production processes; stock management and administrative tasks</li>
+        <li>Took part in the Biarritz food fair</li>
+      </ul>
+
+      <h3>Discovery Intern – Vélo Horizon – Angers, France</h3>
+      <p class="meta">11/2019</p>
+      <ul>
+        <li>Website management; repair and sale of electric bike equipment</li>
+      </ul>
+
+      <h2>EDUCATION</h2>
+
+      <h3>Engineering Degree (Master's level) in Computer Science and Networks – ESAIP School of Engineering – Saint-Barthélemy-d'Anjou, France</h3>
+      <p class="meta">09/2023 – 06/2028 (in progress, 4th year)</p>
+
+      <h3>Erasmus+ Exchange Semester – Computer Science (taught in English) – Vizja University – Warsaw, Poland</h3>
+      <p class="meta">02/2026 – 06/2026</p>
+
+      <h3>French Baccalauréat (high school diploma) – Ensemble scolaire Saint-Benoît – Angers, France</h3>
+      <p class="meta">2023 – Majors in mathematics and physics-chemistry; computer science (NSI) in 11th grade</p>
+
+      <h2>VOLUNTEERING AND STUDENT ACTIVITIES</h2>
+
+      <h3>Events Manager – Sports Union (BDS), ESAIP</h3>
+      <p class="meta">2026 – 2027 (ongoing)</p>
+      <ul>
+        <li>Planning and organizing the union's events; coordinating with the other board members</li>
+      </ul>
+
+      <h3>Volunteer – Innov'LAB (ESAIP student association)</h3>
+      <p class="meta">2025 – 2026</p>
+      <ul>
+        <li>Repairing computer hardware; building two arcade cabinets; training sessions</li>
+      </ul>
+
+      <h2>LANGUAGES</h2>
+      <p>French: native</p>
+      <p>English: university semester taught entirely in English (Erasmus+, Warsaw)</p>
+
+      <h2>INTERESTS</h2>
+      <p>New technologies, science, sport</p>
+    </main>
+  </div>
+</body>
+</html>

@@ -1,5 +1,5 @@
 /* ==========================================================================
-   Portfolio — Baptiste Gautreau
+   Portfolio - Baptiste Gautreau
    Palette : nuit profonde + couleurs « macaron » (abricot, framboise, lavande, menthe)
    ========================================================================== */
 
@@ -584,3 +584,99 @@ kbd { font-family: var(--f-mono); padding: 2px 7px; border-radius: 6px; border: 
 
 /* Les cartes de compétences gardent leur inclinaison 3D une fois révélées */
 .js .bcard[data-reveal].in { transform: rotateX(var(--rx, 0deg)) rotateY(var(--ry, 0deg)); }
+
+/* ==========================================================================
+   Texte justifié (paragraphes et listes de texte)
+   ========================================================================== */
+.hero__lead, .statement, .about__text > p, .facts dd, .shead__lead, .block p, .steps p,
+.ticks li, .analysis p, .first__text > p:last-child, .bcard__d, .synth__text, .axes p,
+.bridge__quote p, .plan p, .engage__lead, .engage__list span, .engage__gain p,
+.tl__item > p:not(.tl__date):not(.tl__sub), .cvcta p:last-child, .stats li > span, .figures li > span,
+.menu__foot {
+  text-align: justify;
+  text-align-last: left;
+  -webkit-hyphens: auto;
+  hyphens: auto;
+  hyphenate-limit-chars: 8 3 3;
+  text-wrap: wrap;
+}
+.facts dd span { hyphens: manual; }
+sup { font-size: .6em; line-height: 0; vertical-align: super; }
+
+/* ==========================================================================
+   05 · Engagement : deux associations
+   ========================================================================== */
+.assoc { display: grid; gap: clamp(70px, 9vw, 140px); }
+.assoc__item { display: grid; grid-template-columns: minmax(0, 5fr) minmax(0, 7fr); gap: clamp(30px, 6vw, 100px); align-items: center; }
+.assoc__item--flip { grid-template-columns: minmax(0, 7fr) minmax(0, 5fr); }
+.assoc__item--flip .assoc__visual { order: 2; }
+.assoc__title { font-family: var(--f-display); font-weight: 700; font-size: clamp(2.3rem, 5vw, 4.4rem); line-height: 1; letter-spacing: -.045em; margin-bottom: 20px; }
+.assoc .engage__list b { color: var(--accent); }
+.assoc .engage__meta span:first-child { background: var(--accent); }
+.engage__gain { margin-top: clamp(70px, 9vw, 130px); }
+.engage__gain p { max-width: 78ch; }
+
+/* Billet du BDS */
+.ticket-wrap { display: grid; justify-items: center; gap: 20px; perspective: 1100px; }
+.ticket {
+  position: relative; width: min(100%, 390px); display: grid; grid-template-columns: 1fr 82px;
+  border-radius: 22px; color: #14121f; overflow: hidden;
+  background: linear-gradient(140deg, #ffe08a 0%, #ffd666 30%, #ff9d5c 70%, #ff7a8f 100%);
+  box-shadow: 0 60px 110px -40px rgba(255, 214, 102, .5), 0 30px 60px -30px rgba(0, 0, 0, .8);
+  transform: rotate(-4deg) rotateX(var(--rx, 0deg)) rotateY(var(--ry, 0deg));
+  transition: transform .7s var(--ease);
+  animation: floaty 6s ease-in-out infinite;
+}
+@keyframes floaty { 50% { translate: 0 -12px; } }
+.ticket::before, .ticket::after { content: ''; position: absolute; right: 70px; width: 24px; height: 24px; border-radius: 50%; background: var(--bg); z-index: 2; }
+.ticket::before { top: -12px; } .ticket::after { bottom: -12px; }
+.ticket__glare { position: absolute; inset: 0; pointer-events: none; background: linear-gradient(105deg, transparent 35%, rgba(255, 255, 255, .55) 50%, transparent 65%); background-size: 250% 100%; animation: sheen 4.5s ease-in-out infinite; mix-blend-mode: soft-light; }
+@keyframes sheen { 0% { background-position: 150% 0; } 60%, 100% { background-position: -100% 0; } }
+.ticket__main { padding: 26px 24px 24px; position: relative; }
+.ticket__k { font-family: var(--f-mono); font-size: .66rem; letter-spacing: .14em; text-transform: uppercase; opacity: .7; }
+.ticket__title { font-family: var(--f-display); font-weight: 800; font-size: clamp(4rem, 9vw, 5.6rem); line-height: .86; letter-spacing: -.06em; margin-top: 12px; }
+.ticket__sub { font-family: var(--f-serif); font-style: italic; font-size: 1.45rem; line-height: 1.1; margin-top: 4px; }
+.ticket__info { display: grid; grid-template-columns: repeat(3, auto); justify-content: start; gap: 18px; margin-top: 26px; padding-top: 16px; border-top: 1.5px solid rgba(20, 18, 31, .2); }
+.ticket__info dt { font-family: var(--f-mono); font-size: .6rem; letter-spacing: .12em; text-transform: uppercase; opacity: .6; }
+.ticket__info dd { font-weight: 700; font-size: .92rem; white-space: nowrap; }
+.ticket__stub { display: flex; flex-direction: column; align-items: center; justify-content: space-between; padding: 22px 0; border-left: 2px dashed rgba(20, 18, 31, .32); }
+.ticket__stub span { writing-mode: vertical-rl; font-family: var(--f-mono); font-size: .7rem; font-weight: 500; letter-spacing: .3em; }
+.ticket__code { display: block; width: 40px; height: 74px; background: repeating-linear-gradient(180deg, #14121f 0 2px, transparent 2px 4px, #14121f 4px 7px, transparent 7px 9px, #14121f 9px 10px, transparent 10px 13px); opacity: .85; }
+
+/* Boutons des deux CV et du contact */
+.cvcta__btns { display: flex; flex-wrap: wrap; gap: 12px; }
+.btn--ghost { background: transparent; color: var(--text); border: 1px solid var(--line-2); transition: color .4s; }
+.btn--ghost:hover { color: #0a0a10; }
+.contact__actions { display: flex; flex-wrap: wrap; justify-content: center; gap: 14px; margin-top: clamp(36px, 5vw, 64px); }
+.contact__actions .contact__btn { margin-top: 0; }
+.contact__btn--ghost { background: rgba(255, 255, 255, .08); color: #fff; border: 1px solid rgba(255, 255, 255, .35); backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px); transition: color .4s; }
+.contact__btn--ghost:hover { color: #0a0a10; }
+.contact__mail { margin-top: 20px; font-family: var(--f-mono); font-size: .86rem; color: #e7e3f0; letter-spacing: .02em; }
+
+@media (max-width: 980px) {
+  .assoc__item, .assoc__item--flip { grid-template-columns: 1fr; }
+  .assoc__item--flip .assoc__visual { order: 0; }
+}
+@media (max-width: 640px) {
+  .cvcta__btns { width: 100%; }
+  .contact__actions .contact__btn { width: 100%; justify-content: center; }
+  .ticket { grid-template-columns: 1fr 64px; }
+  .ticket::before, .ticket::after { right: 52px; }
+  .ticket__info { gap: 12px; }
+  .engage__lead, .statement { font-size: 1.22rem; line-height: 1.38; }
+  .hero__lead { font-size: 1.02rem; }
+}
+@media (prefers-reduced-motion: reduce) { .ticket { animation: none; } }
+
+/* ==========================================================================
+   Sélecteur de langue, mention « Réalisé avec Claude »
+   ========================================================================== */
+.nav__right { display: flex; align-items: center; gap: 10px; }
+.lang { display: flex; gap: 2px; padding: 4px; border-radius: 999px; border: 1px solid var(--line); background: rgba(255, 255, 255, .035); backdrop-filter: blur(14px); -webkit-backdrop-filter: blur(14px); }
+.lang a { font-family: var(--f-mono); font-size: .7rem; font-weight: 500; letter-spacing: .06em; line-height: 1; padding: 8px 10px; border-radius: 999px; color: var(--muted); transition: color .3s, background .3s; }
+.lang a:hover { color: #fff; }
+.lang a[aria-current="true"] { background: var(--text); color: #0a0a10; }
+.is-quick .loader { display: none !important; }
+.footer__made { margin-top: 16px; font-size: .66rem; letter-spacing: .05em; color: var(--dim); text-align: center; }
+@media (max-width: 1180px) { .nav__links a { padding-inline: 10px; } }
+@media (max-width: 380px) { .lang a { padding: 7px 7px; } .nav__right { gap: 6px; } }

@@ -1,5 +1,5 @@
 /* ==========================================================================
-   Portfolio — Baptiste Gautreau · animations et interactions (sans dépendance)
+   Portfolio - Baptiste Gautreau · animations et interactions (sans dépendance)
    ========================================================================== */
 (() => {
   'use strict';
@@ -12,6 +12,8 @@
   const fine = matchMedia('(hover: hover) and (pointer: fine)').matches;
   const root = document.documentElement;
   const body = document.body;
+  /* Texte traduit (voir js/i18n.js) ; renvoie le français si la clé manque. */
+  const T = (key, fallback) => (window.I18N ? window.I18N.t(key, fallback) : fallback);
 
   /* ---------- Découpage du texte (mots / lettres) ---------- */
   function splitWords(el, cls = 'w', innerCls = 'wi') {
@@ -56,7 +58,10 @@
     setTimeout(() => body.classList.add('is-intro-done'), reduce ? 0 : 2600);
   }
   (function runLoader() {
-    if (reduce || !loaderNum) { ready(); return; }
+    let quick = false;
+    try { quick = sessionStorage.getItem('quickIntro') === '1'; sessionStorage.removeItem('quickIntro'); } catch (e) { /* rien */ }
+    if (quick) body.classList.add('is-quick');
+    if (reduce || !loaderNum || quick) { ready(); return; }
     const dur = 1500; const t0 = performance.now();
     let fontsOk = false;
     const fonts = document.fonts && document.fonts.ready ? document.fonts.ready : Promise.resolve();
@@ -157,6 +162,15 @@
   $$('.browser__view img').forEach(img => img.addEventListener('load', measure));
   measure();
 
+  /* Après un changement de langue, on revient à l'endroit où l'on était. */
+  let restoreY = null;
+  try { restoreY = sessionStorage.getItem('restoreY'); sessionStorage.removeItem('restoreY'); } catch (e) { /* rien */ }
+  if (restoreY) {
+    if ('scrollRestoration' in history) history.scrollRestoration = 'manual';
+    const go = () => window.scrollTo({ top: +restoreY, behavior: 'instant' });
+    go(); addEventListener('load', () => { measure(); go(); });
+  }
+
   /* ---------- Bandeau défilant ---------- */
   const rows = $$('.marquee__row').map(row => {
     const track = $('.marquee__track', row);
@@ -224,7 +238,7 @@
   const burger = $('.nav__burger'); const menu = $('#menu');
   function setMenu(open) {
     body.classList.toggle('menu-open', open);
-    burger.setAttribute('aria-expanded', open); burger.setAttribute('aria-label', open ? 'Fermer le menu' : 'Ouvrir le menu');
+    burger.setAttribute('aria-expanded', open); burger.setAttribute('aria-label', open ? T('js.menu_close', 'Fermer le menu') : T('js.menu_open', 'Ouvrir le menu'));
     menu.setAttribute('aria-hidden', !open);
     body.style.overflow = open ? 'hidden' : '';
   }
@@ -296,15 +310,15 @@
   }
 
   /* ---------- Compétences : pastilles de provenance + filtre ---------- */
-  const SRC = { h: 'var(--c-apricot)', d: 'var(--c-sky)', e: 'var(--c-lav)', i: 'var(--c-mint)' };
-  const NAMES = { h: 'Les Macarons Hottekiet', d: 'Les Douceurs du Monde', e: 'ESAIP et Erasmus', i: "Innov'LAB" };
+  const SRC = { h: 'var(--c-apricot)', d: 'var(--c-sky)', e: 'var(--c-lav)', i: 'var(--c-mint)', b: 'var(--c-lemon)' };
+  const NAMES = { h: 'Les Macarons Hottekiet', d: 'Les Douceurs du Monde', e: T('js.n.e', 'ESAIP et Erasmus'), i: "Innov'LAB", b: T('js.n.b', 'Bureau des Sports') };
   const skills = $$('.sk li');
   skills.forEach(li => {
     const srcs = li.dataset.src.split(' ');
     const dots = document.createElement('span'); dots.className = 'dots';
     srcs.forEach(s => { const d = document.createElement('i'); d.style.setProperty('--c', SRC[s]); dots.append(d); });
     li.append(dots);
-    li.title = 'Mise en œuvre : ' + srcs.map(s => NAMES[s]).join(', ');
+    li.title = T('js.used_in', 'Mise en œuvre : ') + srcs.map(s => NAMES[s]).join(', ');
   });
   const countEl = $('.filter__count b');
   const countLabel = $('.filter__count');
@@ -316,7 +330,7 @@
       li.classList.toggle('is-hit', hit && f !== 'all');
       if (hit) { n++; if (f !== 'all') li.style.setProperty('--hit', SRC[f]); }
     });
-    if (countEl) { countEl.textContent = n; countLabel.lastChild.textContent = n > 1 ? ' compétences' : ' compétence'; }
+    if (countEl) { countEl.textContent = n; countLabel.lastChild.textContent = n > 1 ? T('js.skill_many', ' compétences') : T('js.skill_one', ' compétence'); }
   }
   $$('.filter button').forEach(btn => btn.addEventListener('click', () => {
     $$('.filter button').forEach(b => { b.classList.toggle('is-on', b === btn); b.setAttribute('aria-pressed', b === btn); });
@@ -362,9 +376,10 @@
   })();
 
   /* ---------- Attestation : le bouton n'apparaît que si le fichier est présent ---------- */
-  const att = $('[data-attestation]');
-  if (att && location.protocol.startsWith('http')) {
-    fetch(att.getAttribute('href'), { method: 'HEAD' }).then(r => { if (r.ok) att.hidden = false; }).catch(() => {});
+  if (location.protocol.startsWith('http')) {
+    $$('[data-attestation]').forEach(att => {
+      fetch(att.getAttribute('href'), { method: 'HEAD' }).then(r => { if (r.ok) att.hidden = false; }).catch(() => {});
+    });
   }
 
   /* ---------- Fond animé du hero (WebGL) ---------- */
@@ -487,7 +502,7 @@
       parts.forEach(p => { p.x += p.vx; p.y += p.vy; p.vy += .05; p.life--; ctx.fillStyle = P[p.c]; ctx.fillRect(p.x | 0, p.y | 0, p.life > 12 ? 2 : 1, p.life > 12 ? 2 : 1); });
 
       text('SCORE', 4, 3, P[1]); text(String(score).padStart(4, '0'), 28, 3, '#fff');
-      text('2 BORNES', W - widthOf('2 BORNES') - 4, 3, P[2]);
+      text('LVL 2', W - widthOf('LVL 2') - 4, 3, P[2]);
       if ((tick >> 4) & 1) { const s = 'PRESS A'; text(s, ((W - widthOf(s)) / 2) | 0, H - 9, P[0]); }
       ctx.fillStyle = P[3]; ctx.fillRect(0, 10, W, 1); ctx.fillRect(0, H - 12, W, 1);
     }
